@@ -1,0 +1,29 @@
+name: Daily Random Update
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # Runs at 01:00 UTC every day
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Run Update Script
+        run: |
+          python update_script.py  # Ensure your script file is named correctly
+
+      - name: Push Changes
+        run: |
+          git config --global user.name "pramonoutomo"
+          git config --global user.email "emailbuatcariduit@gmail.com"
+          git add random_data.txt
+          git commit -m "Automated daily update"
+          git push
