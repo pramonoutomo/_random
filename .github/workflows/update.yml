@@ -23,8 +23,8 @@ jobs:
 
       - name: Push Changes
         run: |
-          git config --global user.name "pramonoutomo"
-          git config --global user.email "emailbuatcariduit@gmail.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
           git add random_data.txt
           git commit -m "Automated daily update"
           git push git push https://x-access-token:${{secrets.PAT_TOKEN}}@github.com/pramonoutomo/_random.git
