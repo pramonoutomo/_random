@@ -27,4 +27,4 @@ jobs:
           git config --global user.email "emailbuatcariduit@gmail.com"
           git add random_data.txt
           git commit -m "Automated daily update"
-          git push
+          git push https://x-access-token:${{secrets.PAT_TOKEN}}@github.com/pramonoutomo/_random.git
