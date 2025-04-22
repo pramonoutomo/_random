@@ -3,6 +3,7 @@ name: Daily Random Update
 on:
   schedule:
     - cron: '0 1 * * *'  # Runs at 01:00 UTC every day
+  workflow_dispatch:  # Enable manual triggering
 
 jobs:
   update:
